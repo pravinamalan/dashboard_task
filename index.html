@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap icon cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+        integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
+    <!-- font awsome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+        integrity="sha512-c93ifPoTvMdEJH/rKIcBx//AL1znq9+4/RmMGafI/vnTFe/dKwnn1uoeszE2zJBQTS1Ck5CqSBE+34ng2PthJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- box icon cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css" integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Task 2 Dash Board</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- chart link -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- js link -->
+    <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body>
+    <!-- side navbar section starts -->
+    <!-- mobile navbar -->
+    <div class="mob-nav">
+        <i class='bx bx-menu' id="mob-toggle-menu"></i>
+        <img src="./assets/images/logo-sm.png" alt="logo" class="mob-logo">
+        <i class='bx bx-dots-vertical-rounded' id="mob-menu"></i>
+    </div>
+    <!-- side bar -->
+    <div id="side-bar-container" class="side-bar hide_we mob-side-hide">
+        <img src="./assets/images/logo.png" alt="logo">
+        <div class="side-bar-icon"> <a href="#"><i class='bx bxs-dashboard'></i></a> <span
+                class="side-bar-title">DASHBOARD</span></div>
+        <div class="side-bar-icon">
+            <a
+                href="https://demos.themeselection.com/cryptodash-free-cryptocurrency-dashboard-template/demo/html/ltr/vertical-menu/buy-ico.html"><i
+                    class='bx bx-layer'></i></a><span class="side-bar-title">BUY
+                ICO</span>
+        </div>
+        <div class="side-bar-icon"><a
+                href="https://demos.themeselection.com/cryptodash-free-cryptocurrency-dashboard-template/demo/html/ltr/vertical-menu/wallet.html"><i
+                    class='bx bx-wallet-alt'></i></a><span class="side-bar-title">WALLET</span></div>
+        <div class="side-bar-icon"><a
+                href="https://demos.themeselection.com/cryptodash-free-cryptocurrency-dashboard-template/demo/html/ltr/vertical-menu/transactions.html"><i
+                    class='bx bx-shuffle'></i></a></i><span class="side-bar-title">TRANSACTION</span></div>
+        <div class="side-bar-icon"><a
+                href="https://demos.themeselection.com/cryptodash-free-cryptocurrency-dashboard-template/demo/html/ltr/vertical-menu/faq.html"><i
+                    class='bx bx-circle'></i></a><span class="side-bar-title">FAQ</span>
+        </div>
+        <div class="side-bar-icon"><i class='bx bxs-user'></i><span class="side-bar-title">ACCOUNT</span></div>
+    </div>
+    <!-- nav bar -->
+    <nav id="nav-bar" class="nav-bar nav-hide ">
+        <div class="nav-search">
+            <i class='bx bx-menu' id="menu-btn"></i>
+            <i class='bx bx-search'></i>
+        </div>
+        <div class="nav-user">
+            <img src="./assets/images/flag.svg" alt="flag">
+            <i class='bx bxs-bell'></i>
+            <i class='bx bx-wallet'></i>
+            <div class="nav-user-icon"><img src="./assets/images/avatar-s-1.png" alt=""><span>CIC 3,458.88</span></div>
+        </div>
+    </nav>
+    <!-- side navbar section ends -->
+
+    <section class="body-wrapper body-margin-top">
+
+        <!-- content 1 section starts -->
+        <div class="content-1 charts">
+            <div class="bar-chart-container">
+                <h6 class="bar-cart-h6 donut-h6">ICO TOKEN(SUPPLY&DEMAND)</h6>
+                <div class="bar-chart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+            <section class="donut-chart-container">
+                <h6 class="donut-h6">TOKEN DISTRIBUTION</h6>
+                <div class="container">
+                    <div class="donut-chart-block block">
+                        <div class="donut-chart">
+                            <div id="part1" class="portion-block">
+                                <div class="circle"></div>
+                            </div>
+                            <div id="part2" class="portion-block">
+                                <div class="circle"></div>
+                            </div>
+                            <div id="part3" class="portion-block">
+                                <div class="circle"></div>
+                            </div>
+                            <div id="part4" class="portion-block">
+                                <div class="circle"></div>
+                            </div>
+                            <div id="part5" class="portion-block">
+                                <div class="circle"></div>
+                            </div>
+                            <div id="part6" class="portion-block">
+                                <div class="circle"></div>
+                            </div>
+                            <p class="center">
+                            </p>
+                            <p class="text">100%
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="donut-body">
+                    <div class="list1">
+                        <div class="list">
+                            <p class="list-p"><i class="bi bi-dot li-dot-1" style="color:#2abbfe;"></i>Crowd Sale</p>
+                            <p>41%</p>
+                        </div>
+                        <div class="list">
+                            <p class="list-p"><i class="bi bi-dot li-dot-1" style="color:#c37bfe;"></i>Team</p>
+                            <p>18%</p>
+                        </div>
+                        <div class="list">
+                            <p class="list-p"><i class="bi bi-dot li-dot-1" style="color:#39d98c;"></i>Advisors</p>
+                            <p>15%</p>
+                        </div>
+                    </div>
+                    <div class="list2">
+                        <div class="list">
+                            <p class="list-p"><i class="bi bi-dot li-dot-1" style="color: #ed5d44;"></i>Project</p>
+                            <p>10%</p>
+                        </div>
+                        <div class="list">
+                            <p class="list-p"><i class="bi bi-dot li-dot-1" style="color:#fa679d;"></i>Master Nodes</p>
+                            <p>8%</p>
+                        </div>
+                        <div class="list">
+                            <p class="list-p"><i class="bi bi-dot li-dot-1" style="color:#33d4d8;"></i>Program</p>
+                            <p>8%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content 1 section ends -->
+
+        <!-- content 2 section starts -->
+        <div class="card content-2-wrapper">
+            <div class="one wd">
+                <label for="ico-token">ICO Token</label>
+                <input type="text" placeholder="5000" class="input">
+            </div>
+            <!-- <i class="fas fa-sliders-h wd section-2-icon"></i> -->
+            <i class='bx bxs-right-arrow-alt wd section-2-icon'></i>
+            <div class="three wd">
+                <label for="eth">ETH</label>
+                <input type="text" placeholder="1" class="input">
+            </div>
+            <div class="four wd">
+                <select name="" id="select">
+                    <option value="1">USDT</option>
+                    <option value="2">ETH</option>
+                    <option value="3">BTC</option>
+                    <option value="4">LTC</option>
+                    <option value="5">Credit Card</option>
+                </select>
+            </div>
+            <div class="five wd">
+                <label for="wallet-adrs">Wallet adress</label>
+                <input type="text" placeholder="0xe834a970619218d0a7db4ee5a3c87022e71e177f" class="adrs">
+            </div>
+            <div class="six wd">
+                <button class="buy-now btn">Buy now</button>
+            </div>
+
+
+
+        </div>
+        <!-- content 2 section ends -->
+
+        <!-- content 3 section starts -->
+        <div class="card-2">
+            <div class="card-2-box" id="box1">
+                <h6 class="card-h6 h6">ICO TOKEN BALANCE</h6>
+                <div class="box-container card flex">
+                    <div class="card-wrapper">
+                        <strong class="card-2-strong">Your balance:</strong>
+                        <h1 class="card-2-h1">3,458.88 CIC</h1>
+                        <p>Welcome bonus <strong>+30%</strong> expries in 21 days</p>
+                    </div>
+                    <div class="six">
+                        <button class="withdraw btn">Withdraw <i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-2-box card" id="box2">
+                <!-- <h6 class="card-h6 h6">TOKEN SALE PROCESS</h6> -->
+                <div class="box-container-1 box-container">
+                    <div class="card-2-span">
+                        <span class="float-left">$0</span>
+                        <span class="float-rght">$5M</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+
+                    <div class="card-2-span">
+                        <span class="float-left distribute">Distributed <strong class="card-2-strong">6,235,125
+                                CIC</strong></span>
+                        <span class="float-right contribute">Contributed <strong class="card-2-strong">5478 ETH | 80
+                                BTC</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content 3 section ends -->
+        <!-- content 4 section starts -->
+        <div class="content-4">
+            <h6 class="h6">recent Transactions</h6>
+            <table class="table">
+                <tr>
+                    <th>status</th>
+                    <th>date</th>
+                    <th>amount</th>
+                    <th>currency</th>
+                    <th>currency</th>
+                    <th>tokens(cic)</th>
+                    <th>details</th>
+                    <th></th>
+                </tr>
+                <tr class="tr">
+                    <td><i class="bi bi-record-circle success"></i>Paid</td>
+                    <td class="date">2018-01-03</td>
+                    <td class="amnt"><button class="scs">Deposit</button></td>
+                    <td>5.34111</td>
+                    <td><i class="bi bi-currency-bitcoin"></i>ETH</td>
+                    <td>-</td>
+                    <td>Deposit to your Balance</td>
+                    <td><i class="bi bi-hand-thumbs-up warning"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="bi bi-record-circle success"></i>Paid</td>
+                    <td class="date">2018-01-03</td>
+                    <td class="amnt"><button class="scs">Deposit</button></td>
+                    <td>5.34111</td>
+                    <td><i class="bi bi-currency-bitcoin"></i>ETH</td>
+                    <td>3,258</td>
+                    <td>Tokens Purchase</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><i class="bi bi-record-circle warning"></i>in Process</td>
+                    <td class="date">2018-01-21</td>
+                    <td class="amnt"><button class="warn">Referal</button></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>200.88</td>
+                    <td>Referal Promo Bonus</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><i class="bi bi-record-circle danger"></i>pending</td>
+                    <td class="date">2018-01-25</td>
+                    <td class="amnt"><button class="dan">Withdrawl</button></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-3,458.88</td>
+                    <td>Tokens withdrawn</td>
+                    <td><i class="bi bi-currency-dollar warning"></i></td>
+                </tr>
+                <tr>
+                    <td><i class="bi bi-record-circle success"></i>Paid</td>
+                    <td class="date">2018-01-28</td>
+                    <td class="amnt"><button class="dan">Deposit</button></td>
+                    <td>0.8791</td>
+                    <td><i class="bi bi-currency-bitcoin"></i>BTC</td>
+                    <td>--</td>
+                    <td>Deposit to your Balance</td>
+                    <td><i class="bi bi-hand-thumbs-up warning"></i></td>
+                </tr>
+            </table>
+        </div>
+        <!-- content 4 section ends -->
+
+        <!-- content 5 section stars -->
+        <div class="content-5">
+            <div class="image-container">
+                <h6 class="card-h6 h6">latest updates</h6>
+                <div class="image-content">
+                    <img src="./assets/images/blog-post.png" alt="blog post">
+                    <div class="image-content-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the
+                            card's content.</p>
+                        <a href="#" class="card-link link-one">Card link</a>
+                        <a href="#" class="card-link link-two">Another link</a>
+                    </div>
+
+                    <div class="image-content-footer">
+                        <span class="float-left">3 hours ago</span>
+                        <a href="#" class="card-link link-three">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="slider-container">
+                <h6 class="card-h6 h6">roadmap</h6>
+                <div class="slider-content">
+                    <div class="timeline">
+                        <a href="#" class="prev"><i class="bi bi-chevron-left prev-btn"></i></a>
+                        <div class="slide">
+                            <ol>
+                                <li><a href="#">16 Jan</a></li>
+                                <!-- <li><a href="#">28 Feb</a></li>
+                            <li><a href="#">20 Mar</a></li>
+                            <li><a href="#">20 May</a></li>
+                            <li><a href="#">09 Jul</a></li>
+                            <li><a href="#">30 Aug</a></li>
+                            <li><a href="#">15 Sep</a></li> -->
+                            </ol>
+                            <span class="filling-line"></span>
+                        </div>
+                        <a href="#" class="next"><i class="bi bi-chevron-right nxt-btn"></i></a>
+                    </div>
+                    <div class="slider-card">
+                        <p class="text-bold">ICO Launched</p>
+                        <p class="text-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum
+                            praesentium
+                            officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content 5 section ends -->
+
+        <!-- footer section stars -->
+        <footer class="footer">
+            <span class="footer-left">Copyright &COPY; 2022 <a href="#" class="footer-anchor">ThemeSelection
+                </a>, All rights reserved. </span>
+            <span class="footer-right">Hand-crafted & Made with <i class="bi bi-heart heart"></i></span>
+        </footer>
+        <!-- footer section ends -->
+
+    </section>
+</body>
+
+</html>
